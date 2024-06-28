@@ -23,8 +23,8 @@ public final class Parameters {
     }
 
     public static boolean isParameter(Yaml yaml) {
-        if (yaml instanceof Yaml.Scalar) {
-            String scalar = ((Yaml.Scalar) yaml).getValue();
+        if (yaml instanceof Yaml.Scalar scalar1) {
+            String scalar = scalar1.getValue();
             return scalar.startsWith("((") && scalar.endsWith("))");
         }
         return false;

@@ -75,8 +75,8 @@ public class ChangeResourceVersion extends Recipe {
                                 .map(Yaml.Documents.class::cast)
                                 .findFirst()
                                 .get()
-                                .getDocuments().get(0).getBlock();
-                        Yaml.Mapping.Entry versionEntry = versionMapping.getEntries().get(0);
+                                .getDocuments().getFirst().getBlock();
+                        Yaml.Mapping.Entry versionEntry = versionMapping.getEntries().getFirst();
                         versionEntry = autoFormat(versionEntry, ctx, getCursor());
                         return mapping.withEntries(ListUtils.concat(mapping.getEntries(), versionEntry));
                     }

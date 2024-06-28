@@ -142,8 +142,7 @@ public class ChangeValue extends ScanningRecipe<ChangeValue.Accumulator> {
         return new YamlIsoVisitor<ExecutionContext>() {
             @Override
             public @Nullable Yaml visit(@Nullable Tree tree, ExecutionContext ctx) {
-                if (tree instanceof Yaml.Documents) {
-                    Yaml.Documents sourceFile = (Yaml.Documents) tree;
+                if (tree instanceof Yaml.Documents sourceFile) {
                     boolean matchesFile = fileMatcher == null;
                     if (!matchesFile) {
                         Path sourcePath = sourceFile.getSourcePath();
